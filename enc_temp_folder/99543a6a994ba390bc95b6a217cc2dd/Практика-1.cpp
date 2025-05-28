@@ -30,6 +30,7 @@ string fun_2 (int n) {
 		return "Число равно нулю.";
 	}
 }
+
 string fun_3 (int x) {
 	// Функция для поиска максимального числа из трех чисел
 	int n;
@@ -43,11 +44,7 @@ string fun_3 (int x) {
 	}
 	return "Максимальное число: " + to_string(max_num);
 }
-static int system_puase() {
-	cin.get(); // ждем нажатия Enter
-	system("cls");    // Windows
-	return;
-}
+
 int menu() {
 	cout << "1. пр1 Кол-во разрядов\n";
 	cout << "2. пр1 > < = нулю\n";
@@ -77,7 +74,7 @@ int menu() {
 			cout << "Вы ввели число: " << n << "; ";
 			cout 
 				<< fun_1(n) << std::endl;
-			
+			system("cls");    // Windows
 			break;
 		}
 		case 2:
@@ -86,7 +83,6 @@ int menu() {
 			cin >> n;
 			cout << "Вы ввели число: " << n << "; ";
 			cout << fun_2(n) << endl;
-			cin.get(); // ждем нажатия Enter
 			system("cls");    // Windows
 			break;
 		case 3:
@@ -107,6 +103,7 @@ int menu() {
 			return menu(); // повторно вызываем меню для корректного выбора
 	}
 }
+
 int main() {
 	// подключаем русскую локаль по умолчанию ОС
 	setlocale(LC_ALL, "");
@@ -118,3 +115,8 @@ int main() {
 		menu();
 	}
 }
+
+//cout << "Конец программы" << endl;
+//cout << "Нажмите Enter для выхода" << endl;
+//cin.ignore(); // игнорируем предыдущий ввод
+//cin.get(); // ждем нажатия Enter
